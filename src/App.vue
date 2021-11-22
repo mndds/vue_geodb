@@ -1,28 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar app>
+      <v-app-bar-title> Geo DB </v-app-bar-title>
+
+      <v-spacer />
+
+      <v-btn elevation="0" exact :to="{ name: 'Home' }">Home</v-btn>
+      <v-btn elevation="0" :to="{ name: 'CountryList' }">Countries</v-btn>
+      <v-btn elevation="0" :to="{ name: 'CityList' }">Cities</v-btn>
+
+      <v-spacer />
+    </v-app-bar>
+
+    <v-main>
+      <router-view :key="$route.fullPath" />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  name: "App",
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>
