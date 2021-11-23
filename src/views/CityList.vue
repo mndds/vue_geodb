@@ -5,6 +5,12 @@
     <div v-if="loading" />
 
     <div v-else-if="cities">
+      <div class="mb-5" style="display: flex; align-items: center; gap: 10px">
+        <div>
+          <v-text-field v-model="filter.name" label="Name" />
+        </div>
+        <v-btn color="primary" @click="loadCities">Filter</v-btn>
+      </div>
       <v-card>
         <v-list>
           <v-list-item
@@ -27,7 +33,7 @@
         :total-visible="7"
         v-model="page"
         circle
-        :length="Math.ceil(info.totalCount / 11)"
+        :length="Math.ceil(info.totalCount / 10)"
       />
     </div>
 
@@ -43,6 +49,9 @@ export default {
     cities: null,
     info: null,
     page: 1,
+    filter: {
+      name: '',         
+    },
   }),
   mounted() {
     this.loadCities();
@@ -58,6 +67,7 @@ export default {
       http
         .get(`cities`, {
           params: {
+            namePrefix: this.filter.name,
             limit: 10,
             offset: (this.page - 1) * 10,
           },
