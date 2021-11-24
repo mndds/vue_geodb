@@ -3,26 +3,26 @@
     <div v-if="loading" />
 
     <div v-else-if="regionDetails">
-      <h1 class="display-2 mt-5 mb-10">{{ regionDetails.name }}</h1>
+      <h1 class="white--text display-2 mt-5 mb-10">{{ regionDetails.name }}</h1>
       <v-list>
         <v-list-item>
           <v-list-item-content>
-            Country code
+            Country code:
             {{ regionDetails.countryCode }}
           </v-list-item-content>
           <v-list-item-content>
-            Fips Code
+            Fips Code:
             {{ regionDetails.fipsCode }}
           </v-list-item-content>
           <v-list-item-content>
-            ISO Code
+            ISO Code:
             {{ regionDetails.isoCode }}
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </div>
 
-    <h1 class="mt-5 mb-10 display-2">Cities</h1>
+    <h1 class=" white--text mt-5 mb-10 display-1">Cities</h1>
     <div v-if="loading2" />
     <div v-else-if="regionCities && !loading2">
       <v-card>

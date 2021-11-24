@@ -3,7 +3,7 @@
     <div v-if="loading"></div>
 
     <div v-else-if="countryDetails">
-      <h1 class="mt-5 mb-10 display-2">{{ countryDetails.name }}</h1>
+      <h1 class="white--text mt-5 mb-10 display-2">{{ countryDetails.name }}</h1>
 
       <v-card class="mx-auto" max-width="344">
         <v-img

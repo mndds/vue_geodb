@@ -3,9 +3,9 @@
     <div v-if="loading" />
 
     <div v-else-if="city">
-      <h1 class="display-2 mt-5 mb-10">
-        <div style="display: flex">
-          <v-list-item
+      <h1 class=" white--text display-2 mt-5 mb-10">
+        <div style="display:flex;width:300px" >
+          <v-list-item width=100 class="white--text"
             :to="{
               name: 'ShowCountry',
               params: { countryId: city.countryCode },
@@ -18,23 +18,23 @@
       <v-list>
         <v-list-item>
           <v-list-item-content>
-            Country
+            Country:
             {{ city.country }}
           </v-list-item-content>
           <v-list-item-content>
-            Region
+            Region:
             {{ city.region }}
           </v-list-item-content>
           <v-list-item-content>
-            Elevation Meters
+            Elevation Meters:
             {{ city.elevationMeters }}
           </v-list-item-content>
           <v-list-item-content>
-            Population
+            Population:
             {{ city.population }}
           </v-list-item-content>
           <v-list-item-content>
-            Timezone
+            Timezone:
             {{ city.timezone }}
           </v-list-item-content>
         </v-list-item>

@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="display-2 mt-5 mb-10">Regions</h1>
+    <h1 class="white--text display-1 mt-2 mb-10">Regions</h1>
     <div v-if="loading" />
 
     <div v-else-if="regions && regions.length > 0">

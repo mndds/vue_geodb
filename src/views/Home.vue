@@ -1,20 +1,18 @@
 <template>
   <v-container>
-    <div>Main pagee</div>
-
-      <div class="mb-5" style="display: flex; align-items: center; gap:10px">
+      <div style="display: flex; align-items: center; gap:10px">
             <div>                
-                <v-text-field v-model="filter.name" label="Name"/>
+                <v-text-field dark color="white" v-model="filter.name" label="Name"/>
             </div>            
-            <v-btn color="primary" @click="loadCities();loadCountriesTimeout()" >Filter</v-btn>          
+            <v-btn color="white" @click="loadCities();loadCountriesTimeout()" >Filter</v-btn>          
       </div>
 
-      <h3 class="display-2 mt-5 mb-10">Results</h3>
+      <h3 v-if="cities || countries" class="white--text display-2 mb-10 mt-5">Results</h3>
 
     <div v-if="loadingCity"/>  
 
     <div v-else-if="cities && cities.length > 0">
-      <h3 class="display-1 mt-5 mb-10">Cities: </h3>
+      <h3 class="white--text display-1 mt-5 mb-10">Cities: </h3>
       <v-card>
         <v-list>
           <v-list-item
@@ -44,7 +42,7 @@
 
     <div v-if="loadingCountry"></div>
     <div v-else-if="countries.length > 0 && !loadingCountry">
-      <h3 class="display-1 mt-5 mb-10">Countries:</h3>
+      <h3 class="white--text display-1 mt-5 mb-10">Countries:</h3>
       <v-card>
         <v-list>
           <v-list-item
@@ -150,3 +148,4 @@ export default {
 }
 
 </script>
+
